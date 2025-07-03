@@ -29,3 +29,4 @@ Read ./ansible/README.md and continue the process.
 ## TODO
 
 - Fix deploy CNI.
+- Add steps to configure ingress-nginx (workaround: kubectl delete -A ValidatingWebhookConfiguration ingress-nginx-admission)
