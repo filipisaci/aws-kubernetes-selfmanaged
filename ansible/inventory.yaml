@@ -1,0 +1,22 @@
+---
+all:
+  children:
+    k8s_cluster:
+      children:
+        control_plane:
+          hosts:
+            control_plane_1:
+              ansible_ssh_host: 18.228.39.18
+        worker_nodes:
+          hosts:
+            worker_node1:
+              ansible_ssh_host: 18.230.129.18
+            worker_node2:
+              ansible_ssh_host: 54.94.204.53
+      vars:
+        ansible_ssh_port: 22
+        ansible_user: ubuntu
+        ansible_ssh_private_key_file: ../terraform-ssh-key.pem
+        ansible_python_interpreter: /usr/bin/python3
+        ansible_become: true
+        ansible_ssh_common_args: "-o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null"
